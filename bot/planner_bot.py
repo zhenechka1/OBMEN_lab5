@@ -58,6 +58,7 @@ class PlannerBot:
             self.bot.send_message(message.chat.id, text)
 
         @self.bot.message_handler(commands=["add"])
+//Трохи завеликий хендлер. Давай винесемо парсинг тексту (спліт по `;`) в окрему акуратну функцію (напр. parse_task(text)). Так буде набагато легше писати тести потім :)
         def add_handler(message):
             user = self.register_user(message)
 
