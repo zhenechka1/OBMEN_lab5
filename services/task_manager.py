@@ -2,6 +2,7 @@ from models.task import Task
 
 
 class TaskManager:
+// Додай сюди докстрінги (docstrings), хоча б швиденько розпиши за що відповідає клас. Буде набагато простіше читати.
     def __init__(self, database):
         self.database = database
 
