@@ -33,6 +33,7 @@ class PlannerBot:
         @self.bot.message_handler(commands=["start"])
         def start_handler(message):
             user = self.register_user(message)
+            // Цей рядок дублюється абсолютно в кожному хендлері (порушуємо DRY). Треба зробити простенький декоратор, у який вже буде приходити готовий об'єкт user.
             text = (
                 f"Вітаю, {user.username}!\n"
                 "Я PlannerBot — бот для повсякденних задач.\n\n"
