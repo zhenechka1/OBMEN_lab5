@@ -16,6 +16,7 @@ class PlannerBot:
         self.register_handlers()
 
     def register_user(self, message) -> User:
+// Назва `register_user` трохи збиває з пантелику, бо метод також повертає вже існуючих юзерів. Краще було б щось типу`get_or_create_user`.
         telegram_user = message.from_user
         user = self.database.get_user(telegram_user.id)
 
