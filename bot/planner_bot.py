@@ -73,6 +73,7 @@ class PlannerBot:
                     "/add Зробити звіт ; 2026-04-15",
                 )
                 return
+// Тут юзер цілком може ввести "післязавтра" замість дати, і бот це проковтне. Додай, будь ласка, валідацію через datetime.strptime.
 
             if ";" in text:
                 title, deadline = text.split(";", 1)
