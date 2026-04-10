@@ -32,6 +32,7 @@ class PlannerBot:
 
     def register_handlers(self) -> None:
         @self.bot.message_handler(commands=["start"])
+// Тут забули дописати тип повернення. Додай -> None: для повноти типізації, будь ласка.
         def start_handler(message):
             user = self.register_user(message)
             // Цей рядок дублюється абсолютно в кожному хендлері (порушуємо DRY). Треба зробити простенький декоратор, у який вже буде приходити готовий об'єкт user.
@@ -152,6 +153,7 @@ class PlannerBot:
                 self.bot.send_message(message.chat.id, f"Задачу {task_id} видалено.")
             else:
                 self.bot.send_message(
+  //  Команда називається `/remind`, але фактично бот сам ні про що не нагадує, а просто фільтрує таски. Може перейменуємо на `/deadlines`? 
                     message.chat.id, "Помилка: задачу з таким ID не знайдено."
                 )
 
